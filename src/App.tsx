@@ -3,6 +3,7 @@ import './App.css';
 import {Map} from "./components/Map";
 import {Button} from "./components/Button";
 import FilterComponent from "./components/FilterComponent";
+import {FullInput} from "./components/FullInput";
 
 
 export type topCarsType = {
@@ -104,10 +105,15 @@ function App() {
             {/*    <button onClick={()=>FilteredMoney('RUBLS')}>RUBLS</button>*/}
             {/*</div>*/}
 
-            <div>
-                <input />
-                <button>+</button>
-            </div>
+            {/*--------------------------*/}
+
+            <FullInput />
+
+            {/*<div>*/}
+            {/*    <input />*/}
+            {/*    <button>+</button>*/}
+            {/*</div>*/}
+
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>

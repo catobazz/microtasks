@@ -4,6 +4,7 @@ import {Map} from "./components/Map";
 import {Button} from "./components/Button";
 import FilterComponent from "./components/FilterComponent";
 import {FullInput} from "./components/FullInput";
+import { Input } from './components/Input';
 
 
 export type topCarsType = {
@@ -34,6 +35,8 @@ function App() {
             {message: 'message5'}
         ]
     )
+    let [title, setTitle] = useState('')
+
 
     const [money, setMoney] = useState<MoneyType[]>([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
@@ -75,6 +78,10 @@ function App() {
         let NewMessage = {message: title}
         setMessage([NewMessage, ...message])
     }
+    const callBackButtonHandler = () =>{
+        SetTitleInput(title)
+        setTitle('')
+    }
 
     return (
         <div className="App">
@@ -112,19 +119,32 @@ function App() {
 
             {/*--------------------------*/}
 
-            <FullInput SetTitleInput={SetTitleInput}/>
+            {/*<FullInput SetTitleInput={SetTitleInput}/>*/}
 
             {/*<div>*/}
             {/*    <input />*/}
             {/*    <button>+</button>*/}
             {/*</div>*/}
 
+            {/*{message.map((el, index) => {*/}
+            {/*    return (*/}
+            {/*        <div key={index}>{el.message}</div>*/}
+            {/*    )*/}
+            {/*})}*/}
+
+        {/*    --------------------------------------------------------*/}
+
+            <Input
+                title={title}
+                setTitle={setTitle}
+            />
+            <Button name={'add new message'} callBack={callBackButtonHandler} />
+
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
                 )
             })}
-
 
 
         </div>

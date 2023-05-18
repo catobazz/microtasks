@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
+import {Button} from "./Button";
 
 
 type PropsInputType = {
@@ -19,6 +20,7 @@ export const FullInput = (props: PropsInputType) => {
         <div>
             <input value={title} onChange={onChangeInputHandler}/>
             <button onClick={onClickButtonHandler}>+</button>
+            {/*<Button name={'add message'} callBack={onClickButtonHandler} />*/}
         </div>
     );
 };

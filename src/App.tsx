@@ -71,6 +71,11 @@ function App() {
         alert(text)
     }
 
+    const SetTitleInput = (title:string) => {
+        let NewMessage = {message: title}
+        setMessage([NewMessage, ...message])
+    }
+
     return (
         <div className="App">
             <Map cars={topCars}/>
@@ -107,7 +112,7 @@ function App() {
 
             {/*--------------------------*/}
 
-            <FullInput />
+            <FullInput SetTitleInput={SetTitleInput}/>
 
             {/*<div>*/}
             {/*    <input />*/}
